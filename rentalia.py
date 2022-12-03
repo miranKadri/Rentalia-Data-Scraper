@@ -19,8 +19,9 @@ def main():
     driver.implicitly_wait(15)
     driver.get(url) 
 
-    cookies = driver.find_element('xpath', '//*[@id="didomi-host"]/div/div/div/div//div[2]/button[2]')
-    cookies.click()
+    #clicking the accepting button 
+    cookies_btn = driver.find_element('xpath', '//*[@id="didomi-host"]/div/div/div/div//div[2]/button[2]')
+    cookies_btn.click()
 
     locations = ["Costa Brava", "Alicante", "Barcelona", "Madrid", "Castelldefels", "Gavà"]  
 
