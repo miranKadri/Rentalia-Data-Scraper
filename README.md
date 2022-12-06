@@ -18,6 +18,6 @@ I have included six locations "Costa Brava", "Alicante", "Barcelona", "Madrid", 
 
 --Do visit back again in some time for updates--
 
-Also, if any one has a good idea around upgradation reach out to me at mirankadri9@outlook.com✅.
+Also, any suggestions on how this project could further be developed are welcomed, feel free to reach out to me at mirankadri9@outlook.com✅.
 
  
