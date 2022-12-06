@@ -1,7 +1,8 @@
-from selenium import webdriver
-import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+import time
+import sys
 import csv
 
 def main():
@@ -23,7 +24,8 @@ def main():
     cookies_btn = driver.find_element('xpath', '//*[@id="didomi-host"]/div/div/div/div//div[2]/button[2]')
     cookies_btn.click()
 
-    locations = ["Costa Brava", "Alicante", "Barcelona", "Madrid", "Castelldefels", "Gavà"]  
+    #locations = ["Costa Brava", "Alicante", "Barcelona", "Madrid", "Castelldefels", "Gavà"]  
+    locations = sys.argv[1:] # takes names of the sites it will search hotels in.
 
     def render():
         for i in range(1,22):
@@ -97,7 +99,7 @@ def main():
                     except:  
                         ppn = ''    
                     # prop = prop
-                    
+                
                     driver.get(link)
                     render()
                     try:
@@ -109,9 +111,9 @@ def main():
                     bklnk.click()
                     render()
                     
+                     
                     
-
-                    wr.writerow([title, lctn, ppn,  link, phn])
+                    wr.writerow([title, lctn, ppn,  link, phn]) 
 
                 lnk = driver.find_element_by_xpath('//*[@id="houseList"]/div[3]/div[2]/ul/li[6]/a').get_attribute('href')
                 print(lnk)
