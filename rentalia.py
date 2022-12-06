@@ -23,9 +23,10 @@ def main():
     #clicking the accepting button 
     cookies_btn = driver.find_element('xpath', '//*[@id="didomi-host"]/div/div/div/div//div[2]/button[2]')
     cookies_btn.click()
-
-    #locations = ["Costa Brava", "Alicante", "Barcelona", "Madrid", "Castelldefels", "Gavà"]  
-    locations = sys.argv[1:] # takes names of the sites it will search hotels in.
+    if len(sys.argv[1:])==0:
+        locations = ["Costa Brava", "Alicante", "Barcelona", "Madrid", "Castelldefels", "Gavà"]  
+    else:    
+        locations = sys.argv[1:] # takes names of the sites it will search hotels in.
 
     def render():
         for i in range(1,22):
@@ -59,7 +60,7 @@ def main():
 
         with open('data/rentalia.csv','w', encoding = 'utf-8') as f:
             wr = csv.writer(f, dialect = 'excel')
-            wr.writerow(['Title','Location', 'Price per night', 'Link', 'Contact number'])
+            wr.writerow(['Title','Location', 'Price per night', 'Link', 'Contact number', 'Region'])
             
             while(True):
             # now extract the data from the page we reached on that website     
@@ -113,7 +114,7 @@ def main():
                     
                      
                     
-                    wr.writerow([title, lctn, ppn,  link, phn]) 
+                    wr.writerow([title, lctn, ppn,  link, phn, loc]) 
 
                 lnk = driver.find_element_by_xpath('//*[@id="houseList"]/div[3]/div[2]/ul/li[6]/a').get_attribute('href')
                 print(lnk)
