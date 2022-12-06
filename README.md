@@ -13,8 +13,8 @@ You are now good to go, Run the following command to start the scraper.
 `python retalia.py`  
 
 You can pass the name of the regions as arguments after your python file name in the cmd like this:  
-`python retalia.py "costa brava" "gava"` 
-Make sure you pass the names under `""`.
+`python retalia.py "costa brava" "gava"`. 
+Make sure you pass names under `""`.
 
 I have included six locations "Costa Brava", "Alicante", "Barcelona", "Madrid", "Castelldefels", and "Gavà" for now, wo when you don't put any arguments in cmd it will by default take these names. 
 You will find the scraped data inside Data directory in the form csv file. keep in mind that the data will get reflected inside that csv file only when the execution is completed or halted.
